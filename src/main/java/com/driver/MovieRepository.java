@@ -1,6 +1,7 @@
 package com.driver;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.security.Key;
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Component
+@Repository
 public class MovieRepository {
 
     HashMap<String, Movie> MovieMap = new HashMap<>();

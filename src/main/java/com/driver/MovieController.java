@@ -29,7 +29,7 @@ public class MovieController {
 
 
         movieService.insertDirector(director);
-        return new ResponseEntity<>("Success", HttpStatus.CREATED);
+        return new ResponseEntity<>("Success", HttpStatus.CREATED );
     }
 
 
@@ -45,20 +45,20 @@ public class MovieController {
 
     @GetMapping("get-movie-by-name/{name}")
     public ResponseEntity<Movie> getMovieByName(@PathParam("name") String name){
-        return new ResponseEntity<>(movieService.getMovieByName(name),HttpStatus.OK );
+        return new ResponseEntity<>(movieService.getMovieByName(name) , HttpStatus.OK );
     }
 
 
     @GetMapping("get-director-by-name/{name}")
     public ResponseEntity<Director> getDirectorByName(@PathParam("name") String name){
-        return new ResponseEntity<>(movieService.getDirectorByName(name), HttpStatus.OK);
+        return new ResponseEntity<>(movieService.getDirectorByName(name) , HttpStatus.OK);
     }
 
 
 
     @GetMapping("get-movies-by-director-name/{director}")
     public ResponseEntity<List<String>> getMoviesByDirectorName(@PathParam("name") String name){
-        return new ResponseEntity<>(movieService.getMovieListByDirectorName(name), HttpStatus.OK);
+        return new ResponseEntity<>(movieService.getMovieListByDirectorName(name) , HttpStatus.OK);
     }
 
 
