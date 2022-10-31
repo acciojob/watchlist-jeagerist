@@ -5,7 +5,7 @@ public class Director {
     int numberOfMovies;
     double imdbRating;
 
-    Director(){
+    public Director(){
 
     }
 
@@ -36,6 +36,6 @@ public class Director {
     }
 
     public void setImdbRating(double imdbRating) {
-        this.imdbRating = this.imdbRating;
+        this.imdbRating = imdbRating;
     }
 }

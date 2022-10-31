@@ -33,12 +33,10 @@ public class MovieRepository {
     public Director getDirectorByNameDB(String name){
         return DirectorMap.get(name);
     }
-    public List<String> getMoviesByDirectorName(String name){
-        List<String> movieList = new ArrayList<>();
-        for(Map.Entry<Movie, Director> movieDirectorEntry: MovieDirectorMap.entrySet()){
-            if(movieDirectorEntry.getValue().getName().equals(name)){
-                movieList.add(movieDirectorEntry.getKey().getName());
-            }
+    public List<Movie> getMoviesByDirectorName(String name){
+        List<Movie> movieList = new ArrayList<>();
+        if(MovieMap.containsKey(name)){
+            movieList.add(MovieMap.get(name));
         }
         return movieList;
     }
@@ -48,6 +46,14 @@ public class MovieRepository {
             movieList.add(movieEntry.getValue());
         }
         return movieList;
+    }
+    public void deleteAllDirectors() {
+        for(String d : DirectorMap.keySet()){
+            if(DirectorMap.containsKey(d)){
+                DirectorMap.remove(d);
+            }
+        }
+        DirectorMap.clear();
     }
     public void deleteDirectorByNameDB(String name){
         DirectorMap.remove(name);

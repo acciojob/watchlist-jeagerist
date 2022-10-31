@@ -29,7 +29,7 @@ public class MovieService {
     public Director getDirectorByName(String name){
         return movieRepository.getDirectorByNameDB(name);
     }
-    public List<String> getMovieListByDirectorName(String name){
+    public List<Movie> getMovieListByDirectorName(String name){
         return movieRepository.getMoviesByDirectorName(name);
     }
     public List<Movie> getListOfMovies(){
@@ -37,5 +37,8 @@ public class MovieService {
     }
     public void deleteDirectorByName(String name){
         movieRepository.deleteDirectorByNameDB(name);
+    }
+    public void DeleteAllDirectors() {
+        movieRepository.deleteAllDirectors();
     }
 }
